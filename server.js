@@ -11,10 +11,8 @@ const signin = require("./controllers/signin");
 const db = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: "fredericbarry",
-    password: "",
-    database: "face-recognition",
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 

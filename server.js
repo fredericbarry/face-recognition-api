@@ -21,10 +21,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("It's working!");
-});
-
 app.put("/image", (req, res) => {
   image.handleImage(req, res, db);
 });

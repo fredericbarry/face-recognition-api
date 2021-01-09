@@ -24,6 +24,9 @@ const handleRegister = (req, res, db, bcrypt) => {
             res.json(user[0]);
           });
       })
+      .catch((err) =>
+        res.status(400).json("Failed to insert user into login table", err)
+      )
       .then(trx.commit)
       .catch(trx.rollback);
   }).catch((err) => res.status(400).json("Failed to register"));
